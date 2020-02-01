@@ -2,6 +2,11 @@ import React from 'react';
 import './App.scss';
 
 function App() {
+  const handleGuessClick = () => {
+    alert('nice guess cunt');
+  };
+
+
   return (
     <div className='App'>
      <section className='lives-left'>
@@ -13,7 +18,7 @@ function App() {
      </section>
 
      <section className='confirm-guess'>
-       <button>GUESS</button>
+       <button onClick={handleGuessClick}>GUESS</button>
      </section>
     </div>
   );
