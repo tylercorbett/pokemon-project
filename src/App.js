@@ -4,9 +4,8 @@ import './App.scss';
 function App() {
   const [currentUserInput, setCurrentUserInput] = useState(null);
   const [currentLivesLeft, setCurrentLivesLeft] = useState(3);
-  const handleLivesLeft = () => {
-  
-  }
+  const [numberToGuess] = useState(Math.floor(Math.random() * (10 - 1)) + 1);
+
   const handleGuessClick = () => {
     alert('You Guessed X');
   };
@@ -21,7 +20,7 @@ function App() {
        <h2>Enter Your Guess: {currentUserInput}</h2>
        <input type='number' min={1} max={10} onChange={event => setCurrentUserInput(event.target.value)} />
      </section>
-
+     {numberToGuess}
      <section className='confirm-guess'>
        <button onClick={handleGuessClick}>GUESS</button>
      </section>
