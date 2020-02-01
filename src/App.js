@@ -1,14 +1,20 @@
 import React from 'react';
-import logo from './images/logo.svg';
-import styles from './App.scss';
+import './App.scss';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        Joey's First Coding Lesson
-      </header>
+    <div className='App'>
+     <section className='lives-left'>
+       <h2>Lives Left: 3</h2>
+     </section>
+     <section className='user-guess'>
+       <h2>Enter Your Guess:</h2>
+       <input type='number' min={1} max={10}/>
+     </section>
+
+     <section className='confirm-guess'>
+       <button>GUESS</button>
+     </section>
     </div>
   );
 }
