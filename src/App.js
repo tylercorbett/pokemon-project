@@ -3,7 +3,10 @@ import './App.scss';
 
 function App() {
   const [currentUserInput, setCurrentUserInput] = useState(null);
-
+  const [currentLivesLeft, setCurrentLivesLeft] = useState(3);
+  const handleLivesLeft = () => {
+  
+  }
   const handleGuessClick = () => {
     alert('You Guessed X');
   };
@@ -12,7 +15,7 @@ function App() {
   return (
     <div className='App'>
      <section className='lives-left'>
-       <h2>Lives Left:</h2>
+       <h2>Lives Left: {currentLivesLeft}</h2>
      </section>
      <section className='user-guess'>
        <h2>Enter Your Guess: {currentUserInput}</h2>
