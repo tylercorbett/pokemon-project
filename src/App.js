@@ -7,16 +7,31 @@ function App() {
   const [numberToGuess] = useState(Math.floor(Math.random() * (10 - 1)) + 1);
 
   const handleGuessClick = () => {
+    if (currentLivesLeft === 0) {
+      return
+    }
+
     if (currentUserInput > 10 || currentUserInput < 1) {
       alert('you think you are clever you cunt'); 
       return;
     } 
 
     if (currentUserInput > numberToGuess) {
+       setCurrentLivesLeft(currentLivesLeft - 1);
+       if (currentLivesLeft === 1) {
+        alert('game over');
+        return;
+      }
        alert('Your guess is too high! Try guessing a small number.');
     } else if (currentUserInput < numberToGuess) {
+       setCurrentLivesLeft(currentLivesLeft - 1);
+       if (currentLivesLeft === 1) {
+         alert('game over');
+         return;
+       }
        alert('Your guess is too low! Try guessing a bigger number.');
     }
+    
 
   };
 
