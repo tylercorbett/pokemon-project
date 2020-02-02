@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 
 function App() {
@@ -6,6 +6,12 @@ function App() {
   const [currentLivesLeft, setCurrentLivesLeft] = useState(3);
   const [numberToGuess] = useState(Math.floor(Math.random() * (10 - 1)) + 1);
   const [numbersGuessed, setNumbersGuessed] = useState([]);
+
+  useEffect(() => {
+    if ((numbersGuessed[0] === 6 && numbersGuessed[1] === 9) || (numbersGuessed[1] === 6 && numbersGuessed[2] === 9)) {
+      alert('Haha you said the sex number'); 
+    }
+  }, [numbersGuessed])
 
   const handleGuessClick = () => {
     if (currentLivesLeft === 0) {
@@ -23,7 +29,6 @@ function App() {
     const newArray = [currentUserInput];
     numbersGuessed.forEach(guess => newArray.push(guess));
     setNumbersGuessed(newArray);
-
 
     if (currentUserInput > numberToGuess) {
        setCurrentLivesLeft(currentLivesLeft - 1);
