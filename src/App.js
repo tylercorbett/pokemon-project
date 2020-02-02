@@ -30,12 +30,13 @@ function App() {
          return;
        }
        alert('Your guess is too low! Try guessing a bigger number.');
+
+    } else if (currentUserInput === numberToGuess) {
+        alert('You Win!');
+        return;
     }
+  }
     
-
-  };
-
-
   return (
     <div className='App'>
      <section className='lives-left'>
@@ -43,7 +44,7 @@ function App() {
      </section>
      <section className='user-guess'>
        <h2>Enter Your Guess: {currentUserInput}</h2>
-       <input type='number' min="1" max="10" onChange={event => setCurrentUserInput(event.target.value)} />
+       <input type='number' min="1" max="10" onChange={event => setCurrentUserInput(parseInt(event.target.value))} />
      </section>
      {numberToGuess}
      <section className='confirm-guess'>
