@@ -51,8 +51,10 @@ function App() {
      <section className='lives-left'>
        <h2>Lives Left: {currentLivesLeft}</h2>
      </section>
+     <section className='numbers-guessed'>
+       <h2>Numbers Guessed: {numbersGuessed.reverse().join(", ")}</h2>
+     </section>
      <section className='user-guess'>
-       <h2>Enter Your Guess: {currentUserInput}</h2>
        <input type='number' min="1" max="10" onChange={event => setCurrentUserInput(parseInt(event.target.value))} />
      </section>
      {numberToGuess}
